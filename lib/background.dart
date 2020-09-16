@@ -8,7 +8,6 @@ class BackgroundWidget extends StatefulWidget {
 }
 
 class _BackgroundWidgetState extends State<BackgroundWidget> {
-  var myBackgroundColor = RandomColor.getHex();
   var isGradient = false;
   var btnText = 'gradient background';
 
@@ -17,9 +16,7 @@ class _BackgroundWidgetState extends State<BackgroundWidget> {
     return Scaffold(
       body: GestureDetector(
           onTap: () {
-            setState(() {
-              myBackgroundColor = RandomColor.getHex();
-            });
+            setState((){});
           },
           child: isGradient
               ? _buildGradientBackgroundContainer()
@@ -54,7 +51,7 @@ class _BackgroundWidgetState extends State<BackgroundWidget> {
   Widget _buildSolidBackgroundContainer() => Container(
         width: double.infinity,
         height: double.infinity,
-        color: myBackgroundColor,
+        color: RandomColor.getHex(),
         child: Center(
           child: HelloMessage(),
         ),
